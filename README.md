@@ -20,6 +20,32 @@ Scenarios:
 
 9. From Customization-> Switch Settings - Change the Floating Switch Position (Left Bottom).
 
+
+
+Project description: The frameworks that are used to execute this test scenario are given below.
+Here in this project, the architecture that I have used is POM (Page Object Model) framework. In this project, I have made four packages (pages, testcases, util).
+
+Page package: In page package, six java classes are made. Abstract methods are made in page class and then the abstract methods are implemented in BasePage class. Afterwards operation of web element (locator & selector) is executed in other 4 pages.
+
+Testcases package: In this package, two java class are made to execute test cases where in BaseTest class multiple browser operation are executed. In scenarioTest class, all test scenarios are tested.
+
+Util package: In this packages, final variable values are set.
+
+Resources: It covers all login information (Website URL, Username, Password) and TestNG xml file to execute all test cases.
+
+
+Pages:
+
+Technology/Tools/Frameworks
+1. Java
+2. POM
+3. TestNG
+4. Gradle
+5. IntelliJ IDEA
+9. Selenium Webdriver
+10. Web driver manager
+
+
 10. Disable Keyboard Shortcut from the Accessibility Settings.
 
 
