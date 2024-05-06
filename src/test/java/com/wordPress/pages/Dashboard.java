@@ -34,7 +34,7 @@ public class Dashboard extends BasePage{
     }
 
     public Dashboard darkModeBtn(){
-        getWebElement(By.xpath("//div[@class='_track wp-dark-mode-ignore']")).click();
+        getWebElement(By.xpath("//div[contains(@class, 'wp-menu-name') and contains(@class, 'wp-dark-mode-ignore')][text()='WP Dark Mode']")).click();
         return getInstance(Dashboard.class);
     }
 
@@ -54,6 +54,9 @@ public class Dashboard extends BasePage{
         return getWebElements(By.linkText("Plugins")).size() > 0;
     }
 
-
+    public Dashboard darkModeON(){
+        getWebElement(By.xpath("//span[contains(@class, 'wp-dark-mode-ignore')][text()='Dark']")).click();
+        return getInstance(Dashboard.class);
+    }
 
 }

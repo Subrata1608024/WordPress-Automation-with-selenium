@@ -13,16 +13,16 @@ public class GeneralSetting extends BasePage {
 
 
     public GeneralSetting ClickAdminPanelDarkMode() {
-        getWebElement(By.xpath("//a[@href='#/admin']")).click();
+        getWebElement(By.xpath("//a[text()='Admin Panel Dark Mode']")).click();
         return getInstance(GeneralSetting.class);
     }
 
     public GeneralSetting EnableAdminDashboardDarkMode() {
-        getWebElement(By.xpath("//div[@class='text-base w-content leading-6 font-medium flex items-center gap-3 text-black']")).click();
+        getWebElement(By.xpath("//div[text()='Enable Admin Dashboard Dark Mode']")).click();
         return getInstance(GeneralSetting.class);
     }
     public GeneralSetting disableAdminDashboardDarkMode(){
-        getWebElement(By.xpath("//div[@class='text-base w-content leading-6 font-medium flex items-center gap-3 text-black']")).click();
+        getWebElement(By.xpath("//div[text()='Enable Admin Dashboard Dark Mode']")).click();
         return getInstance(GeneralSetting.class);
     }
 
@@ -39,7 +39,7 @@ public class GeneralSetting extends BasePage {
     }
 
     public GeneralSetting clickCustomization() {
-        getWebElement(By.xpath("//h4[@class='text-base leading-6 wp-dark-mode-white']")).click();
+        getWebElement(By.xpath("//h4[contains(@class, 'text-base') and contains(@class, 'wp-dark-mode-white')][text()='Customization']")).click();
         return getInstance(GeneralSetting.class);
     }
     public GeneralSetting switchSettingClick() {
@@ -75,7 +75,7 @@ public class GeneralSetting extends BasePage {
     }
 
     public GeneralSetting clickAdvanceMenu(){
-        getWebElement(By.xpath("//h4[contains(@class, 'text-base') and text()='Advanced']")).click();
+        getWebElement(By.xpath("//h4[contains(@class, 'text-base') and contains(@class, 'wp-dark-mode-white')][text()='Advanced']")).click();
         return getInstance(GeneralSetting.class);
     }
 
@@ -101,8 +101,14 @@ public class GeneralSetting extends BasePage {
         return getInstance(GeneralSetting.class);
     }
 
-    public GeneralSetting toggleAnimation() throws InterruptedException {
-        getWebElement(By.xpath("//div[@class='relative w-10 h-full rounded-full transition duration-100 bg-slate-200']")).click();
+    public GeneralSetting toggleAnimation() {
+        getWebElement(By.xpath("//span[contains(@class, '')][text()='Vibrate']")).click();
+
+        return getInstance(GeneralSetting.class);
+    }
+
+    public GeneralSetting switchAttentionEffectOn() throws InterruptedException {
+        getWebElement(By.xpath("//div[contains(@class, '')][text()='Switch Attention Effect ']")).click();
         Thread.sleep(3000);
         return getInstance(GeneralSetting.class);
     }

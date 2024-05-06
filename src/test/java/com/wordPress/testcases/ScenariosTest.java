@@ -46,8 +46,8 @@ public class ScenariosTest extends BaseTest{
                 .doLogin(getUsername(), getPassword())
                 .navigateToWpDarkMode()
                 .ClickAdminPanelDarkMode()
-                .disableAdminDashboardDarkMode()
-                .EnableAdminDashboardDarkMode();
+                .EnableAdminDashboardDarkMode()
+                .saveChanges();
 
     }
     @Test(priority = 4)
@@ -55,11 +55,21 @@ public class ScenariosTest extends BaseTest{
         Dashboard dashboard = page.getInstance(LogInPage.class)
                 .doLogin(getUsername(),getPassword())
                 .darkModeBtn()
-                        .navigateToDashboard();
+                .navigateToDashboard();
         Assert.assertEquals(dashboard.modeName(), WordpressString.Mode);
 
     }
+
     @Test(priority = 5)
+    public void NavigateToDarkMode() {
+        Dashboard dashboard = page.getInstance(LogInPage.class)
+                .doLogin(getUsername(), getPassword())
+                .darkModeON()
+                .navigateToDashboard();
+
+
+    }
+    @Test(priority = 6)
     public void SelectFloatingSwitchStyle(){
         GeneralSetting generalSetting = page.getInstance(LogInPage.class)
                 .doLogin(getUsername(),getPassword())
@@ -69,7 +79,7 @@ public class ScenariosTest extends BaseTest{
                 .changeFloatingSwitchStyle()
                 .saveChanges();
     }
-    @Test(priority = 6)
+    @Test(priority = 7)
     public void SelectCustomizeSwitchSize(){
         GeneralSetting generalSetting = page.getInstance(LogInPage.class)
                 .doLogin(getUsername(),getPassword())
@@ -83,7 +93,7 @@ public class ScenariosTest extends BaseTest{
 
     }
 
-    @Test(priority = 7)
+    @Test(priority = 8)
     public void ChangeFloatingSwitchPosition(){
         GeneralSetting generalSetting = page.getInstance(LogInPage.class)
                 .doLogin(getUsername(),getPassword())
@@ -95,7 +105,7 @@ public class ScenariosTest extends BaseTest{
                 .saveChanges();
     }
 
-    @Test(priority = 8)
+    @Test(priority = 9)
     public void DisableKeyboardShortcut() throws InterruptedException {
         GeneralSetting generalSetting = page.getInstance(LogInPage.class)
                 .doLogin(getUsername(),getPassword())
@@ -107,14 +117,14 @@ public class ScenariosTest extends BaseTest{
                 .saveChanges();
     }
 
-    @Test(priority = 9)
+    @Test(priority = 10)
     public void ChangeAnimation() throws InterruptedException {
         GeneralSetting generalSetting = page.getInstance(LogInPage.class)
                 .doLogin(getUsername(),getPassword())
                 .navigateToWpDarkMode()
                 .clickCustomization()
                 .switchSettingClick()
-                .toggleAnimation()
+                .switchAttentionEffectOn()
                 .saveChanges();
 
     }
